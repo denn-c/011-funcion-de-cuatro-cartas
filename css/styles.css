@@ -1,0 +1,124 @@
+:root {
+  /* Primary */
+  --Red: hsl(0, 78%, 62%);
+  --Cyan: hsl(180, 62%, 55%);
+  --Orange: hsl(34, 97%, 64%);
+  --Blue: hsl(212, 86%, 64%);
+
+  /* Neutral */
+  --Very-Dark-Blue: hsl(234, 12%, 34%);
+  --Grayish-Blue: hsl(229, 6%, 66%);
+  --Very-Light-Gray: hsl(0, 0%, 98%);
+}
+
+@font-face {
+  font-family: "Poppins ExtraLight";
+  src: url(../asset/fonts/Poppins-ExtraLight.ttf);
+}
+@font-face {
+  font-family: "Poppins Regular";
+  src: url(../asset/fonts/Poppins-Regular.ttf);
+}
+@font-face {
+  font-family: "Poppins SemiBold";
+  src: url(../asset/fonts/Poppins-SemiBold.ttf);
+}
+* {
+  font-family: "Poppins Regular";
+}
+body {
+  background-color: var(--Very-Light-Gray);
+}
+
+.presentacion,
+.titulo,
+.descripcion {
+  text-align: center;
+  padding: 0 1em;
+}
+.presentacion {
+  font-family: "Poppins ExtraLight";
+  font-size: 2rem;
+  color: var(--Grayish-Blue);
+  margin-bottom: 0;
+  margin-top: .5em;
+}
+.titulo {
+  color: var(--Very-Dark-Blue);
+  font-family: "Poppins SemiBold";
+  margin-top: 0.4em;
+}
+.descripcion {
+  color: var(--Grayish-Blue);
+  max-width: 40em;
+  margin: auto;
+  font-size: 0.85rem;
+}
+.contenedor {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 1em;
+}
+.carta {
+  margin:.6em;
+  max-width: 20em;
+  background-color: white;
+  box-shadow: 5px 5px 8px 0px hsl(0, 13%, 91%),
+            -5px 5px 8px 0px hsl(0, 13%, 91%);
+  border-radius: .5em;
+  padding: 2em;
+  position: relative;
+  overflow: hidden;
+}
+
+.centro{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.carta::before{
+  content: '';
+  width: 100%;
+  top: 0;
+  left: 0;
+  height: .3em;
+  position: absolute;
+}
+
+.carta:first-child:before{
+  background-color: var(--Cyan);
+}
+.carta:last-child::before{
+  background-color: var(--Blue);
+}
+.centro .carta:first-child:before{
+  background-color: var(--Red);
+}
+.centro .carta:last-child::before{
+  background-color: var(--Orange);
+}
+
+
+.carta__titulo{
+  font-size: 1.1rem;
+  margin-top: 0;
+  font-family: "Poppins SemiBold";
+  color: var(--Very-Dark-Blue);
+}
+.carta__descripcion{
+  color: var(--Grayish-Blue);
+  font-size: .8rem;
+}
+.carta__imagen{
+  margin-right: 0;
+  margin-left: auto;
+}
+
+@media (max-width:1070px) {
+  .centro{
+    width: 100%;
+  }
+  
+}
